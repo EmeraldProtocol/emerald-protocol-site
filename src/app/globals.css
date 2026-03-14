@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════ Emerald Protocol Website Theme ═══════ */
+
+:root { color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; scroll-behavior: smooth; }
+body { @apply bg-ep_bg text-ep_text antialiased; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+h1, h2, h3, h4 { @apply font-semibold text-ep_text; }
+
+.ep-container { @apply max-w-ep-page mx-auto px-4 sm:px-6 lg:px-8; }
+
+/* ── Nav ── */
+.ep-nav-link { @apply text-sm text-ep_text_muted hover:text-ep_text transition-colors duration-200; }
+.ep-nav-link-active { @apply text-ep_emerald font-medium; }
+
+/* ── Buttons ── */
+.ep-btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-ep_emerald px-6 py-2.5 text-sm font-semibold text-ep_bg transition-all duration-200;
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.25);
+}
+.ep-btn-primary:hover { @apply bg-ep_emerald_soft -translate-y-[1px]; box-shadow: 0 0 30px rgba(52, 211, 153, 0.4); }
+
+.ep-btn-ghost {
+  @apply inline-flex items-center justify-center rounded-full border border-ep_emerald/30 px-6 py-2.5 text-sm font-medium text-ep_text_muted hover:text-ep_text hover:border-ep_emerald/60 transition-all duration-200;
+}
+
+.ep-btn-gold {
+  @apply inline-flex items-center justify-center rounded-full bg-ep_gold/10 border border-ep_gold/30 px-6 py-2.5 text-sm font-semibold text-ep_gold transition-all duration-200;
+}
+.ep-btn-gold:hover { @apply bg-ep_gold/20 border-ep_gold/50; }
+
+/* ── Cards ── */
+.ep-card {
+  @apply rounded-2xl border border-white/[0.06] bg-ep_bg_soft/80 backdrop-blur-sm transition-all duration-300;
+}
+.ep-card:hover { @apply -translate-y-[2px] border-ep_emerald/20; box-shadow: 0 0 40px rgba(52, 211, 153, 0.08); }
+
+.ep-card-gold {
+  @apply rounded-2xl border border-ep_gold/15 bg-ep_bg_soft/80 backdrop-blur-sm transition-all duration-300;
+}
+.ep-card-gold:hover { @apply -translate-y-[2px] border-ep_gold/30; box-shadow: 0 0 40px rgba(245, 197, 66, 0.08); }
+
+.ep-card-sapphire {
+  @apply rounded-2xl border border-ep_sapphire/15 bg-ep_bg_soft/80 backdrop-blur-sm transition-all duration-300;
+}
+
+.ep-card-obsidian {
+  @apply rounded-2xl border border-ep_obsidian/30 bg-ep_bg_soft/80 backdrop-blur-sm transition-all duration-300;
+}
+
+/* ── Pills ── */
+.ep-pill { @apply rounded-full border border-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-ep_text_muted; }
+.ep-pill-emerald { @apply rounded-full bg-ep_emerald/10 border border-ep_emerald/25 px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-ep_emerald; }
+.ep-pill-gold { @apply rounded-full bg-ep_gold/10 border border-ep_gold/25 px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-ep_gold; }
+.ep-pill-sapphire { @apply rounded-full bg-ep_sapphire/10 border border-ep_sapphire/25 px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-ep_sapphire; }
+
+/* ── Hero ── */
+.ep-hero {
+  position: relative; overflow: hidden; border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(52, 211, 153, 0.12), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(245, 197, 66, 0.08), transparent 50%),
+    linear-gradient(135deg, #020611 0%, #050b1c 50%, #020611 100%);
+}
+.ep-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px; pointer-events: none;
+}
+
+/* ── Section dividers ── */
+.ep-section-label { @apply text-[11px] font-semibold tracking-[0.3em] uppercase; }
+
+/* ── Code blocks ── */
+.ep-code {
+  @apply rounded-xl bg-[#080A0E] border border-white/[0.04] p-4 font-mono text-[13px] leading-relaxed text-ep_emerald/70;
+}
+
+/* ── Gate cycle visualization ── */
+.ep-gate-step {
+  @apply flex flex-col items-center gap-1 text-center;
+}
+.ep-gate-dot {
+  @apply w-8 h-8 rounded-full border-2 flex items-center justify-center text-[11px] font-bold transition-all;
+}
+.ep-gate-dot-active { @apply border-ep_emerald bg-ep_emerald/10 text-ep_emerald; }
+.ep-gate-dot-inactive { @apply border-white/10 text-white/20; }
+.ep-gate-arrow { @apply text-white/10 text-lg; }
+
+/* ── Animations ── */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(52,211,153,0.15); } 50% { box-shadow: 0 0 40px rgba(52,211,153,0.3); } }
+
+.animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ── Footer ── */
+.ep-footer {
+  @apply border-t border-white/[0.04] mt-20;
+  background: linear-gradient(to top, rgba(2,6,17,1), rgba(5,11,28,0.8));
+}
+.ep-footer-inner { @apply ep-container py-10 flex flex-col md:flex-row items-center justify-between gap-6; }
+.ep-footer-brand { @apply text-[11px] font-bold tracking-[0.35em] text-ep_emerald/40; }
+.ep-footer-sub { @apply text-[9px] tracking-[0.25em] text-ep_emerald/20 mt-0.5; }
+.ep-footer-meta { @apply text-[11px] text-ep_text_muted/40 mt-2; }
+.ep-footer-socials { @apply flex items-center gap-4; }
+.ep-footer-social-label { @apply text-[10px] text-ep_text_muted/40 mr-2; }
+.ep-footer-icon-only { @apply w-8 h-8 flex items-center justify-center rounded-lg border border-white/[0.06] hover:border-ep_emerald/30 transition-colors; }
+.ep-footer-icon-img { @apply w-4 h-4 opacity-40 hover:opacity-70 transition-opacity; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 3px; }
