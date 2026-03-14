@@ -1,93 +1,106 @@
 // src/app/phase-zero/page.tsx
 
 export default function PhaseZeroPage() {
-  const blocks = [
-    { id: 0, title: "How Computers Think", concepts: 4, examples: "Programs, sequence, determinism, exactness", icon: "🧠" },
-    { id: 1, title: "The First Letters", concepts: 4, examples: "\" \" quotes, ' ' single, # hash, = equals", icon: "🔤" },
-    { id: 2, title: "Actions", concepts: 3, examples: "( ) parentheses, , comma, print()", icon: "⚡" },
-    { id: 3, title: "Numbers & Math", concepts: 8, examples: "int, float, + - * / // % **", icon: "🔢" },
-    { id: 4, title: "Comparison", concepts: 6, examples: "== != < > <= >=", icon: "⚖️" },
-    { id: 5, title: "Structure", concepts: 3, examples: ": colon, indentation, True/False", icon: "🏗️" },
-    { id: 6, title: "Containers", concepts: 4, examples: "[ ] lists, { } dicts, . dot", icon: "📦" },
-    { id: 7, title: "Shortcuts & Strings", concepts: 9, examples: "+= -= f\"\" \\\\ \\n \\t", icon: "✂️" },
-    { id: 8, title: "Logic", concepts: 5, examples: "and, or, not, in, is", icon: "🧩" },
-    { id: 9, title: "Advanced Preview", concepts: 4, examples: "_ @ ; bitwise", icon: "🔮" },
-  ];
-
   return (
-    <div className="space-y-16 md:space-y-24">
+    <div className="space-y-20">
       <header className="max-w-3xl">
         <p className="text-[11px] tracking-[0.3em] text-ep_emerald_soft/70 uppercase mb-2">Phase Zero</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">Before you write code, learn the alphabet.</h1>
-        <p className="text-sm md:text-base text-ep_text_muted leading-relaxed">
-          Most platforms start with &quot;print Hello World&quot; and assume you know what print means,
-          what parentheses do, what quotation marks are for. Emerald Protocol starts differently.
+        <h1 className="text-3xl md:text-4xl font-extrabold mb-4">Before you write code,<br /><span className="text-ep_emerald ep-glow-text">learn the alphabet.</span></h1>
+        <p className="text-[15px] text-ep_text_muted leading-relaxed">
+          Most platforms start with &quot;print Hello World&quot; and assume you know what every symbol means.
+          That&apos;s like asking you to write a sentence before you know the letters.
         </p>
       </header>
 
-      <section className="grid gap-6 md:grid-cols-2 items-start">
-        <div className="ep-card p-6 border-red-500/10">
-          <div className="text-[11px] font-bold text-red-400/60 tracking-wider uppercase mb-3">The problem</div>
-          <p className="text-[13px] text-ep_text_muted leading-relaxed mb-3">
-            A beginner seeing <code className="font-mono text-ep_emerald/60 bg-black/30 px-1.5 py-0.5 rounded">print(&quot;Hello&quot;)</code> encounters
-            4+ unknown symbols at once. They memorize patterns without understanding them. The cracks appear later.
-          </p>
+      {/* Problem vs Solution */}
+      <section className="grid gap-6 md:grid-cols-2">
+        <div className="ep-card p-7 border-red-500/10 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-20 h-20 bg-red-500/[0.03] rounded-full blur-2xl" />
+          <div className="relative z-10">
+            <div className="text-[12px] font-bold text-red-400/60 tracking-wider uppercase mb-4">❌ The Problem</div>
+            <div className="font-mono text-[14px] text-ep_text_muted bg-black/30 rounded-xl p-4 mb-4 border border-white/5">
+              print(&quot;Hello, World!&quot;)
+            </div>
+            <p className="text-[13px] text-ep_text_muted leading-relaxed">
+              A beginner sees this and encounters 4+ unknown symbols at once: <code className="text-red-400/60 font-mono text-[12px]">print</code>,{" "}
+              <code className="text-red-400/60 font-mono text-[12px]">(</code>{" "}
+              <code className="text-red-400/60 font-mono text-[12px]">&quot;</code>{" "}
+              <code className="text-red-400/60 font-mono text-[12px]">)</code>.
+              They memorize the pattern without understanding it. The cracks show up in Phase 3, 4, 5.
+            </p>
+          </div>
         </div>
-        <div className="ep-card p-6 border-ep_emerald/10">
-          <div className="text-[11px] font-bold text-ep_emerald tracking-wider uppercase mb-3">The EP solution</div>
-          <p className="text-[13px] text-ep_text_muted leading-relaxed mb-3">
-            Phase 0 teaches every symbol individually. By the time you see the full command, every piece is already familiar.
-          </p>
+        <div className="ep-card p-7 border-ep_emerald/10 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-20 h-20 bg-ep_emerald/[0.03] rounded-full blur-2xl" />
+          <div className="relative z-10">
+            <div className="text-[12px] font-bold text-ep_emerald tracking-wider uppercase mb-4">✓ The EP Solution</div>
+            <div className="space-y-2 mb-4">
+              {['"  "  → creates text', '(  )  → runs an action', 'print → shows output', ',    → separates items'].map(s => (
+                <div key={s} className="font-mono text-[13px] text-ep_emerald/70 bg-black/30 rounded-lg px-4 py-2 border border-ep_emerald/10">{s}</div>
+              ))}
+            </div>
+            <p className="text-[13px] text-ep_text_muted leading-relaxed">
+              Each symbol taught individually. By the time you see the full command, every piece is already familiar. Zero confusion.
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* 11-point structure */}
       <section>
-        <h2 className="text-xl font-bold mb-2">Every concept gets a full lesson</h2>
-        <p className="text-[13px] text-ep_text_muted mb-6 max-w-2xl">
-          Each of the 50 concepts follows an 11-point structure with Aurum teaching conversationally.
-        </p>
+        <h2 className="text-xl font-bold mb-2">Every concept. Full depth.</h2>
+        <p className="text-[13px] text-ep_text_muted mb-6 max-w-2xl">Each of the 50 concepts follows an 11-point lesson structure:</p>
         <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-4xl">
-          {["What it is", "How it's used", "Where you'll see it", "Common mistakes",
-            "Comparison", "Real-world metaphor", "Diagram / visual", "Code examples",
-            "Symbol displayed large", "Dependencies", "Quiz"].map((point, i) => (
-            <div key={i} className="flex items-start gap-2 rounded-lg border border-white/5 bg-ep_bg_soft p-3">
-              <span className="text-[10px] font-bold text-ep_emerald shrink-0 mt-0.5">{i + 1}</span>
-              <span className="text-[11px] text-ep_text_muted">{point}</span>
+          {[
+            { n: 1, t: "What it is", c: "#34D399" }, { n: 2, t: "How it's used", c: "#34D399" },
+            { n: 3, t: "Where you'll see it", c: "#60A5FA" }, { n: 4, t: "Common mistakes", c: "#F87171" },
+            { n: 5, t: "Comparison with similar", c: "#60A5FA" }, { n: 6, t: "Real-world metaphor", c: "#F5C542" },
+            { n: 7, t: "Diagram / visual", c: "#A78BFA" }, { n: 8, t: "Code examples", c: "#34D399" },
+            { n: 9, t: "Symbol displayed large", c: "#A78BFA" }, { n: 10, t: "Dependencies tree", c: "#F472B6" },
+            { n: 11, t: "Quiz (varied types)", c: "#F59E0B" },
+          ].map((p) => (
+            <div key={p.n} className="flex items-start gap-2 ep-glass p-3 rounded-xl">
+              <span className="text-[10px] font-extrabold shrink-0 mt-0.5 w-4 text-right" style={{ color: p.c }}>{p.n}</span>
+              <span className="text-[12px] text-ep_text_muted">{p.t}</span>
             </div>
           ))}
         </div>
       </section>
 
+      {/* 10 Blocks */}
       <section>
-        <h2 className="text-xl font-bold mb-6">10 blocks. 50 concepts. Logical progression.</h2>
+        <h2 className="text-xl font-bold mb-2">10 blocks. 50 concepts. Like Lego.</h2>
+        <p className="text-[13px] text-ep_text_muted mb-6 max-w-2xl">Each block depends on the previous. Nothing floats in air.</p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {blocks.map((b) => (
-            <div key={b.id} className="ep-card p-4">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-lg">{b.icon}</span>
-                <span className="text-[12px] font-bold text-ep_emerald">Block {b.id}</span>
-              </div>
-              <div className="text-[13px] font-medium text-ep_text mb-1">{b.title}</div>
-              <div className="text-[10px] text-ep_text_muted mb-2">{b.concepts} concepts</div>
-              <div className="text-[10px] text-ep_text_dim font-mono">{b.examples}</div>
+          {[
+            { i: "🧠", t: "How Computers Think", n: 4 }, { i: "🔤", t: "The First Letters", n: 4 },
+            { i: "⚡", t: "Actions", n: 3 }, { i: "🔢", t: "Numbers & Math", n: 8 },
+            { i: "⚖️", t: "Comparison", n: 6 }, { i: "🏗️", t: "Structure", n: 3 },
+            { i: "📦", t: "Containers", n: 4 }, { i: "✂️", t: "Shortcuts & Strings", n: 9 },
+            { i: "🧩", t: "Logic", n: 5 }, { i: "🔮", t: "Advanced Preview", n: 4 },
+          ].map((b, j) => (
+            <div key={j} className="ep-card p-4 text-center">
+              <span className="text-xl">{b.i}</span>
+              <div className="text-[12px] font-bold text-ep_text mt-2">{b.t}</div>
+              <div className="text-[10px] text-ep_emerald mt-1">{b.n} concepts</div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
-        <div className="ep-card p-5">
-          <h3 className="text-sm font-bold mb-2 text-ep_gold">Aurum in teacher mode</h3>
-          <p className="text-[12px] text-ep_text_muted leading-relaxed">Full 1-on-1 tutoring. Ask anything. Get deep explanations with metaphors and examples.</p>
+      {/* Progress teaser */}
+      <section className="max-w-2xl mx-auto ep-glass rounded-2xl p-8 text-center">
+        <div className="text-[11px] tracking-wider text-ep_text_dim uppercase mb-3">Phase 0 Progress Demo</div>
+        <div className="ep-progress-bar mb-3">
+          <div className="ep-progress-fill" style={{ width: '34%' }} />
         </div>
-        <div className="ep-card p-5">
-          <h3 className="text-sm font-bold mb-2 text-ep_emerald">Always accessible</h3>
-          <p className="text-[12px] text-ep_text_muted leading-relaxed">Phase 0 stays as a permanent reference. Forgot what % does in Phase 5? Open it and refresh.</p>
+        <div className="flex justify-between text-[11px]">
+          <span className="text-ep_text_muted">Block 3: Numbers & Math</span>
+          <span className="text-ep_emerald font-bold">17/50 concepts</span>
         </div>
-        <div className="ep-card p-5">
-          <h3 className="text-sm font-bold mb-2 text-ep_sapphire">Skippable with test-out</h3>
-          <p className="text-[12px] text-ep_text_muted leading-relaxed">Already know the basics? Take a quick assessment and skip to Phase 1.</p>
-        </div>
+        <p className="text-[11px] text-ep_text_dim mt-4">
+          Phase 0 tracks your progress concept by concept. Come back anytime to continue where you left off.
+        </p>
       </section>
     </div>
   );

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="au-bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#12161F"/>
+      <stop offset="100%" stop-color="#080A10"/>
+    </radialGradient>
+    <!-- Gold gradient -->
+    <linearGradient id="au-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D576"/>
+      <stop offset="50%" stop-color="#F5C542"/>
+      <stop offset="100%" stop-color="#C4952A"/>
+    </linearGradient>
+    <!-- Gold glow -->
+    <radialGradient id="au-glow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#F5C542" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F5C542" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Frame border gradient -->
+    <linearGradient id="au-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5C542" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#C4952A" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#F5C542" stop-opacity="0.35"/>
+    </linearGradient>
+    <filter id="au-shadow">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#F5C542" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="120" fill="url(#au-bg)"/>
+  
+  <!-- Outer hexagonal frame -->
+  <polygon points="128,18 218,68 218,168 128,218 38,168 38,68" 
+           fill="none" stroke="url(#au-border)" stroke-width="1.5"/>
+  
+  <!-- Inner hexagonal frame -->
+  <polygon points="128,34 206,78 206,178 128,222 50,178 50,78" 
+           fill="none" stroke="url(#au-border)" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Center glow -->
+  <circle cx="128" cy="128" r="60" fill="url(#au-glow)"/>
+  
+  <!-- Sun/star emblem -->
+  <g filter="url(#au-shadow)" transform="translate(128,128)">
+    <!-- Outer rays -->
+    <g fill="url(#au-gold)" opacity="0.6">
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(0)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(30)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(60)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(90)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(120)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(150)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(180)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(210)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(240)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(270)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(300)"/>
+      <polygon points="0,-52 4,-20 -4,-20" transform="rotate(330)"/>
+    </g>
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="22" fill="url(#au-gold)" opacity="0.9"/>
+    <!-- Core dot -->
+    <circle cx="0" cy="0" r="8" fill="#0A0D14" opacity="0.5"/>
+    <!-- Highlight -->
+    <circle cx="-4" cy="-4" r="4" fill="#FFF" opacity="0.15"/>
+  </g>
+</svg>

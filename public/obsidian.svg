@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="ob-bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#12161F"/>
+      <stop offset="100%" stop-color="#080A10"/>
+    </radialGradient>
+    <linearGradient id="ob-red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D43F3F"/>
+      <stop offset="50%" stop-color="#8B2020"/>
+      <stop offset="100%" stop-color="#5C1515"/>
+    </linearGradient>
+    <radialGradient id="ob-core-glow" cx="50%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#D43F3F" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#8B2020" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#8B2020" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ob-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B2020" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#5C1515" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8B2020" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="ob-shield" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#3A3A4E"/>
+      <stop offset="50%" stop-color="#2A2A3E"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+    <filter id="ob-shadow">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#8B2020" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <circle cx="128" cy="128" r="120" fill="url(#ob-bg)"/>
+  
+  <!-- Hexagonal frames -->
+  <polygon points="128,18 218,68 218,168 128,218 38,168 38,68" 
+           fill="none" stroke="url(#ob-border)" stroke-width="1.5"/>
+  <polygon points="128,34 206,78 206,178 128,222 50,178 50,78" 
+           fill="none" stroke="url(#ob-border)" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Red glow behind shield -->
+  <circle cx="128" cy="128" r="55" fill="url(#ob-core-glow)"/>
+  
+  <!-- Shield emblem -->
+  <g filter="url(#ob-shadow)" transform="translate(128,128)">
+    <!-- Shield shape -->
+    <path d="M0,-45 L35,-28 L35,10 L0,45 L-35,10 L-35,-28 Z" 
+          fill="url(#ob-shield)" stroke="#4A4A5E" stroke-width="1"/>
+    <!-- Shield inner border -->
+    <path d="M0,-38 L28,-24 L28,8 L0,38 L-28,8 L-28,-24 Z" 
+          fill="none" stroke="#5A5A6E" stroke-width="0.5" opacity="0.4"/>
+    <!-- Red core orb -->
+    <circle cx="0" cy="0" r="16" fill="url(#ob-red)"/>
+    <!-- Core inner glow -->
+    <circle cx="0" cy="0" r="8" fill="#D43F3F" opacity="0.4"/>
+    <!-- Core highlight -->
+    <circle cx="-3" cy="-3" r="3" fill="#FF6666" opacity="0.2"/>
+  </g>
+</svg>

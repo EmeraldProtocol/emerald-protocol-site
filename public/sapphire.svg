@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="sa-bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#12161F"/>
+      <stop offset="100%" stop-color="#080A10"/>
+    </radialGradient>
+    <linearGradient id="sa-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="50%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <radialGradient id="sa-glow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sa-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="sa-shadow">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#60A5FA" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <circle cx="128" cy="128" r="120" fill="url(#sa-bg)"/>
+  
+  <!-- Hexagonal frames -->
+  <polygon points="128,18 218,68 218,168 128,218 38,168 38,68" 
+           fill="none" stroke="url(#sa-border)" stroke-width="1.5"/>
+  <polygon points="128,34 206,78 206,178 128,222 50,178 50,78" 
+           fill="none" stroke="url(#sa-border)" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Blue glow -->
+  <circle cx="128" cy="128" r="55" fill="url(#sa-glow)"/>
+  
+  <!-- Diamond/crystal emblem -->
+  <g filter="url(#sa-shadow)" transform="translate(128,125)">
+    <!-- Diamond facets -->
+    <polygon points="0,-42 35,-10 0,42 -35,-10" fill="url(#sa-blue)" opacity="0.85"/>
+    <!-- Top facet highlight -->
+    <polygon points="0,-42 35,-10 0,-5 -35,-10" fill="#93C5FD" opacity="0.15"/>
+    <!-- Left facet -->
+    <polygon points="-35,-10 0,-5 0,42" fill="#3B82F6" opacity="0.3"/>
+    <!-- Right facet -->
+    <polygon points="35,-10 0,-5 0,42" fill="#60A5FA" opacity="0.2"/>
+    <!-- Center line -->
+    <line x1="0" y1="-42" x2="0" y2="42" stroke="#93C5FD" stroke-width="0.5" opacity="0.3"/>
+    <line x1="-35" y1="-10" x2="35" y2="-10" stroke="#93C5FD" stroke-width="0.5" opacity="0.3"/>
+    <!-- 4-point star in center -->
+    <g fill="#E0EDFF" opacity="0.5">
+      <polygon points="0,-10 2,0 0,10 -2,0"/>
+      <polygon points="-10,0 0,-2 10,0 0,2"/>
+    </g>
+    <!-- Core sparkle -->
+    <circle cx="0" cy="0" r="2.5" fill="#FFF" opacity="0.4"/>
+  </g>
+</svg>
