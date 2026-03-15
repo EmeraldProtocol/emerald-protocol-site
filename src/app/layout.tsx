@@ -19,12 +19,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script
-  defer
-  data-domain="emerald-protocol.com"
-  src="https://plausible.io/js/script.js"
-  strategy="afterInteractive"
-/>
+
+      <head>
+        <Script
+          defer
+          data-domain="emerald-protocol.com"
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
+      </head>
 
       <body id="top" className="min-h-screen bg-ep_bg text-ep_text">
         <Navbar />
