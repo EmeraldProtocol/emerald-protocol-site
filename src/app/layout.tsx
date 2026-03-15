@@ -19,22 +19,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
-          async
-          src="https://plausible.io/js/pa-RShgg7oOAIvcarFjUvJLB.js"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.plausible = window.plausible || function() {
-                (window.plausible.q = window.plausible.q || []).push(arguments)
-              };
-              plausible.init();
-            `,
-          }}
-        />
-      </head>
-
+  <script
+    async
+    src="https://plausible.io/js/pa-RShgg7oOAIvcarFjUvJLB.js"
+  ></script>
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.plausible = window.plausible || function() {
+          (window.plausible.q = window.plausible.q || []).push(arguments)
+        };
+        plausible.init();
+      `,
+    }}
+  />
+</head>
       <body id="top" className="min-h-screen bg-ep_bg text-ep_text">
         <Navbar />
         <main className="ep-container py-10 md:py-16">{children}</main>
