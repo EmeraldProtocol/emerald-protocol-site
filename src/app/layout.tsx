@@ -23,6 +23,7 @@ export default function RootLayout({
     async
     src="https://plausible.io/js/pa-RShgg7oOAIvcarFjUvJLB.js"
   ></script>
+
   <script
     dangerouslySetInnerHTML={{
       __html: `
