@@ -20,20 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
   <script
-    async
-    src="https://plausible.io/js/pa-RShgg7oOAIvcarFjUvJLB.js"
+    defer
+    data-domain="emerald-protocol.com"
+    src="https://plausible.io/js/script.js"
   ></script>
-
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `
-        window.plausible = window.plausible || function() {
-          (window.plausible.q = window.plausible.q || []).push(arguments)
-        };
-        plausible.init();
-      `,
-    }}
-  />
 </head>
       <body id="top" className="min-h-screen bg-ep_bg text-ep_text">
   <div style={{ display: "none" }}>PLAUSIBLE_TEST_123</div>
