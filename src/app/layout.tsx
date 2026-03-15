@@ -26,7 +26,6 @@ export default function RootLayout({
   ></script>
 </head>
       <body id="top" className="min-h-screen bg-ep_bg text-ep_text">
-  <div style={{ display: "none" }}>PLAUSIBLE_TEST_123</div>
   <Navbar />
   <main className="ep-container py-10 md:py-16">{children}</main>
 
