@@ -35,8 +35,9 @@ export default function RootLayout({
   />
 </head>
       <body id="top" className="min-h-screen bg-ep_bg text-ep_text">
-        <Navbar />
-        <main className="ep-container py-10 md:py-16">{children}</main>
+  <div style={{ display: "none" }}>PLAUSIBLE_TEST_123</div>
+  <Navbar />
+  <main className="ep-container py-10 md:py-16">{children}</main>
 
         <footer className="ep-footer">
           <div className="ep-footer-inner">
