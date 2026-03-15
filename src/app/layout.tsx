@@ -1,5 +1,7 @@
 // src/app/layout.tsx
+
 import type { Metadata } from "next";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
@@ -17,6 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script
+  defer
+  data-domain="emerald-protocol.com"
+  src="https://plausible.io/js/script.js"
+  strategy="afterInteractive"
+/>
+
       <body id="top" className="min-h-screen bg-ep_bg text-ep_text">
         <Navbar />
         <main className="ep-container py-10 md:py-16">{children}</main>
