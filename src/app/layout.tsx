@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 
@@ -53,6 +54,13 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+
+        <Script
+          defer
+          data-domain="emerald-protocol.com"
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
