@@ -1,7 +1,6 @@
 // src/app/layout.tsx
 
 import type { Metadata } from "next";
-import Script from "next/script";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
@@ -19,13 +18,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-
       <head>
-        <Script
-          defer
-          data-domain="emerald-protocol.com"
-          src="https://plausible.io/js/script.js"
-          strategy="afterInteractive"
+        <script
+          async
+          src="https://plausible.io/js/pa-RShgg7oOAIvcarFjUvJLB.js"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.plausible = window.plausible || function() {
+                (window.plausible.q = window.plausible.q || []).push(arguments)
+              };
+              plausible.init();
+            `,
+          }}
         />
       </head>
 
