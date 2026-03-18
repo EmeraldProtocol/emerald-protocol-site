@@ -1,5 +1,3 @@
-// src/app/layout.tsx
-
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
@@ -14,13 +12,13 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon.ico" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
+    shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-
   manifest: "/site.webmanifest",
 };
-
 
 export default function RootLayout({
   children,
@@ -30,17 +28,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-</head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body id="top" className="min-h-screen bg-ep_bg text-ep_text">
-  <Navbar />
-  <main className="ep-container py-10 md:py-16">{children}</main>
+        <Navbar />
+        <main className="ep-container py-10 md:py-16">{children}</main>
 
         <footer className="ep-footer">
           <div className="ep-footer-inner">
             <div className="ep-footer-left">
               <div className="ep-footer-brand">
                 <span className="text-ep_gold">EMERALD PROTOCOL</span>
-                <span className="block text-[8px] tracking-[0.3em] text-ep_gold_soft/40 uppercase mt-0.5">Structure the chaos</span>
+                <span className="block text-[8px] tracking-[0.3em] text-ep_gold_soft/40 uppercase mt-0.5">
+                  Structure the chaos
+                </span>
               </div>
               <div className="ep-footer-meta">
                 © 2025 Emerald Protocol. All rights reserved.
@@ -49,17 +64,53 @@ export default function RootLayout({
 
             <div className="ep-footer-socials">
               <span className="ep-footer-social-label">Follow Emerald</span>
-              <a href="https://x.com/EmeraldProtocol" aria-label="X" className="ep-footer-icon-only" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://x.com/EmeraldProtocol"
+                aria-label="X"
+                className="ep-footer-icon-only"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src="/social/x.svg" alt="X" className="ep-footer-icon-img" />
               </a>
-              <a href="https://www.reddit.com/user/EmeraldProtocol/" aria-label="Reddit" className="ep-footer-icon-only" target="_blank" rel="noopener noreferrer">
-                <img src="/social/reddit.svg" alt="Reddit" className="ep-footer-icon-img" />
+              <a
+                href="https://www.reddit.com/user/EmeraldProtocol/"
+                aria-label="Reddit"
+                className="ep-footer-icon-only"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/social/reddit.svg"
+                  alt="Reddit"
+                  className="ep-footer-icon-img"
+                />
               </a>
-              <a href="https://www.tiktok.com/@emeraldprotocol?lang=bg" aria-label="TikTok" className="ep-footer-icon-only" target="_blank" rel="noopener noreferrer">
-                <img src="/social/tiktok.svg" alt="TikTok" className="ep-footer-icon-img" />
+              <a
+                href="https://www.tiktok.com/@emeraldprotocol?lang=bg"
+                aria-label="TikTok"
+                className="ep-footer-icon-only"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/social/tiktok.svg"
+                  alt="TikTok"
+                  className="ep-footer-icon-img"
+                />
               </a>
-              <a href="https://discord.gg/rx6U5YQF" aria-label="Discord" className="ep-footer-icon-only" target="_blank" rel="noopener noreferrer">
-                <img src="/social/discord.svg" alt="Discord" className="ep-footer-icon-img" />
+              <a
+                href="https://discord.gg/rx6U5YQF"
+                aria-label="Discord"
+                className="ep-footer-icon-only"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/social/discord.svg"
+                  alt="Discord"
+                  className="ep-footer-icon-img"
+                />
               </a>
             </div>
           </div>
