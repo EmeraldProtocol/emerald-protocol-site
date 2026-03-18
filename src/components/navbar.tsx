@@ -65,13 +65,14 @@ export function Navbar() {
 
         {/* Right: CTA on desktop */}
         <div className="hidden md:block">
-          <Link href="https:/demo.emerald-protocol.com"
+          <a 
+          href="https:/demo.emerald-protocol.com"
           target="_blank"
           rel="noopener noreferrer"
           className="ep-btn-primary text-xs"
           >
             Try the Demo
-          </Link>
+          </a>
         </div>
 
         {/* Mobile menu button */}
