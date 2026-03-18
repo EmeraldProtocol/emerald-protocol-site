@@ -286,7 +286,12 @@ export default function HomePage() {
           Start with Phase 0. Learn the alphabet. Then prove you can write the words.
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
-          <a href="/demo" className="ep-btn-primary text-sm px-8 py-3.5">Try the Demo</a>
+          <a 
+          href="https://demo.emerald-protocol.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          
+          className="ep-btn-primary text-sm px-8 py-3.5">Try the Demo</a>
           <a href="https://discord.gg/rx6U5YQF" target="_blank" rel="noopener noreferrer" className="ep-btn-ghost text-sm px-8 py-3.5">Join Discord</a>
         </div>
       </section>
