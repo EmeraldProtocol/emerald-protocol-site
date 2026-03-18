@@ -290,8 +290,10 @@ export default function HomePage() {
           href="https://demo.emerald-protocol.com"
           target="_blank"
           rel="noopener noreferrer"
+          className="ep-btn-primary text-sm px-8 py-3.5"
+          >
+            Try the Demo</a>
           
-          className="ep-btn-primary text-sm px-8 py-3.5">Try the Demo</a>
           <a href="https://discord.gg/rx6U5YQF" target="_blank" rel="noopener noreferrer" className="ep-btn-ghost text-sm px-8 py-3.5">Join Discord</a>
         </div>
       </section>

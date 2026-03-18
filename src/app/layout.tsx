@@ -10,7 +10,17 @@ export const metadata: Metadata = {
   title: "Emerald Protocol – Learn Python from Absolute Zero",
   description:
     "Emerald Protocol is an AI-powered Python learning platform with three intelligent agents. Phase 0 teaches the alphabet. Phases 1-7 teach the code. Structure the chaos.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+
+  manifest: "/site.webmanifest",
 };
+
 
 export default function RootLayout({
   children,
