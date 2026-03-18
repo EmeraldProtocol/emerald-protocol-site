@@ -35,7 +35,12 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 pt-3 ep-hero-ctas-animate md:justify-start">
-            <a href="/demo" className="ep-btn-primary">Try the Demo</a>
+            <a href="https://demo.emerald-protocol.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ep-btn-primary"
+            >
+            Try the Demo</a>
             <a href="/how-it-works" className="ep-btn-ghost">How It Works →</a>
           </div>
         </div>
